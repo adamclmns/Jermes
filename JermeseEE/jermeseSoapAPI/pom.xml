@@ -4,10 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.adamclmns</groupId>
-    <artifactId>JermeseSoapAPj</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>jermesesoapapi</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <properties>
-        <cxf.version>3.2.0</cxf.version>
+        <cxf.version>3.2.1</cxf.version>
         <java.version>1.8</java.version>
     </properties>
     <build>
@@ -44,29 +44,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- <plugin><groupId>org.apache.cxf</groupId><artifactId>cxf-codegen-plugin</artifactId><version>${cxf.version}</version><executions><execution><id>test-service</id><phase>generate-sources</phase><configuration><wsdlRoot>${basedir}/src/main/resources</wsdlRoot></configuration><goals><goal>wsdl2java</goal></goals></execution></executions><dependencies><dependency><groupId>xerces</groupId><artifactId>xercesImpl</artifactId><version>2.9.1</version></dependency><dependency><groupId>org.apache.cxf</groupId><artifactId>cxf-xjc-ts</artifactId><version>${cxf.version}</version></dependency></dependencies></plugin>-->
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-common-utilities</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-tools-common</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-simple</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-            <version>${cxf.version}</version>
-        </dependency>
-    </dependencies>
 </project>

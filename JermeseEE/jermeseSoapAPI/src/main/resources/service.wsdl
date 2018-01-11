@@ -2,11 +2,11 @@
 <wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
     xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
-    xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://test.test.com/test_api/"
-    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://test.test.com/test_api/">
+    xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://jermes.adamclmns.com/testapi/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://jermes.adamclmns.com/testapi/">
     <wsdl:documentation>Test WSDL for Illustration of wsdl2java usage with maven</wsdl:documentation>
     <wsdl:types>
-        <s:schema elementFormDefault="qualified" targetNamespace="http://test.test.com/test_api/">
+        <s:schema elementFormDefault="qualified" targetNamespace="http://jermes.adamclmns.com/testapi/">
             <s:element name="TestElement1">
                 <s:complexType>
                     <s:sequence>
@@ -56,7 +56,7 @@
     <wsdl:binding name="Test_Operation_ManagerSoap" type="tns:Test_Operation_ManagerSoap">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
         <wsdl:operation name="TestOperation">
-            <soap:operation soapAction="http://test.test.com/test_api/TestOperation" style="document" />
+            <soap:operation soapAction="http://jermes.adamclmns.com/testapi/TestOperation" style="document" />
             <wsdl:input>
                 <soap:body use="literal" />
             </wsdl:input>
@@ -68,7 +68,7 @@
     <wsdl:binding name="Test_Operation_ManagerSoap12" type="tns:Test_Operation_ManagerSoap">
         <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
         <wsdl:operation name="TestOperation">
-            <soap12:operation soapAction="http://test.test.com/test_api/TestOperation"
+            <soap12:operation soapAction="http://jermes.adamclmns.com/testapi/TestOperation"
                 style="document" />
             <wsdl:input>
                 <soap12:body use="literal" />
@@ -81,10 +81,10 @@
     <wsdl:service name="Test_Operation_Manager">
         <wsdl:documentation>Random test operation api</wsdl:documentation>
         <wsdl:port binding="tns:Test_Operation_ManagerSoap" name="Test_Operation_ManagerSoap">
-            <soap:address location="https://test.test.com/test-api.asmx" />
+            <soap:address location="https://jermes.adamclmns.com/testapi.asmx" />
         </wsdl:port>
         <wsdl:port binding="tns:Test_Operation_ManagerSoap12" name="Test_Operation_ManagerSoap12">
-            <soap12:address location="https://test.test.com/test-api.asmx" />
+            <soap12:address location="https://jermes.adamclmns.com/testapi.asmx" />
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
