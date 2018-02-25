@@ -10,23 +10,61 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+        <hibernate.version>5.2.13.Final</hibernate.version>
     </properties>
     
     <dependencies>
         <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-service-description</artifactId>
+            <version>3.0.0-milestone1</version>
+        </dependency>
+        <!-- Persistence implementation -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.2.13.Final</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <!-- Standard Libraryies -->
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
+            <version>8.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.adamclmns</groupId>
-            <artifactId>jermesesoapapi</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20171018</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
             <type>jar</type>
         </dependency>
     </dependencies>
     <build>
+        <plugins>
+            <plugin>
+                <groupId>com.sebastian-daschner</groupId>
+                <artifactId>jaxrs-analyzer-maven-plugin</artifactId>
+                <version>0.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>analyze-jaxrs</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Available backends are plaintext (default), swagger and asciidoc -->
+                            <backend>swagger</backend>
+                            <!-- <backend>plaintext</backend> -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
         <finalName>jermeseEE</finalName>
     </build>
 </project>
