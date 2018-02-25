@@ -5,6 +5,12 @@
  */
 package com.adamclmns.jermese.config;
 
+import com.adamclmns.jermese.rest.service.MarathonFacadeREST;
+import com.adamclmns.jermese.rest.service.MarathonRunFacadeREST;
+import com.adamclmns.jermese.rest.service.SprintFacadeREST;
+import com.adamclmns.jermese.rest.service.SprintRunFacadeREST;
+import java.util.HashSet;
+import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
@@ -16,5 +22,14 @@ import javax.ws.rs.core.Application;
 @ApplicationPath("rest")
 public class JermeseService extends Application{
     
-    
+        public Set<Class<?>> getClases() {
+            Set<Class<?>> classes = new HashSet<Class<?>>();
+            classes.add(MarathonFacadeREST.class);
+            classes.add(MarathonRunFacadeREST.class);
+            classes.add(SprintFacadeREST.class);
+            classes.add(SprintRunFacadeREST.class);
+            
+            return classes;
+        }
+        
 }
